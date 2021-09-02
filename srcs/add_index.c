@@ -4,7 +4,8 @@ static t_node	*create_pivot(t_stack *stack, t_node *pivot, int index)
 {
 	t_node		*tmp;
 
-	if (!(tmp = malloc(sizeof(t_node))))
+	tmp = malloc(sizeof(t_node));
+	if (!tmp)
 		exit(1);
 	if (pivot == 0)
 		stack->pivot = tmp;
@@ -20,7 +21,7 @@ static t_node	*create_pivot(t_stack *stack, t_node *pivot, int index)
 	return (tmp);
 }
 
-static int		check_num(int max, int index, int i)
+static int	check_num(int max, int index, int i)
 {
 	int			num;
 
@@ -30,7 +31,7 @@ static int		check_num(int max, int index, int i)
 	return (num);
 }
 
-void			add_index(t_stack *stack, int max)
+void	add_index(t_stack *stack, int max)
 {
 	t_node		*node;
 	t_node		*diff;

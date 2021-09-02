@@ -66,7 +66,7 @@ static void	big_sort(t_stack *stack, int cnt)
 	big_sort_swap_end(stack, 0, now_pivot->i);
 }
 
-void		solve(t_stack *stack, int max)
+void	solve(t_stack *stack, int max)
 {
 	if (max > 5)
 		big_sort(stack, max);

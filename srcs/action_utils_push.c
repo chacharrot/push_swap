@@ -40,7 +40,7 @@ static void	push_b(t_stack *stack)
 	write(1, "pb\n", 3);
 }
 
-void		push(char *line, t_stack *stack)
+void	push(char *line, t_stack *stack)
 {
 	if (*(line + 1) == 'a')
 		push_a(stack);

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void		swap(t_node **head)
+void	swap(t_node **head)
 {
 	t_node	*tmp;
 
@@ -14,7 +14,7 @@ void		swap(t_node **head)
 	(*head)->prev = NULL;
 }
 
-void		rotate(t_node **head, t_node **tail)
+void	rotate(t_node **head, t_node **tail)
 {
 	if (*head == NULL || *tail == NULL || (*head)->next == NULL)
 		return ;
@@ -26,7 +26,7 @@ void		rotate(t_node **head, t_node **tail)
 	(*tail)->next = NULL;
 }
 
-void		rev_rotate(t_node **head, t_node **tail)
+void	rev_rotate(t_node **head, t_node **tail)
 {
 	if (*head == NULL || *tail == NULL || (*tail)->prev == NULL)
 		return ;

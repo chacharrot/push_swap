@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-long long				ft_atol(const char *nptr)
+long long	ft_atol(const char *nptr)
 {
 	unsigned long long	num;
 	int					sign;
@@ -22,13 +22,13 @@ long long				ft_atol(const char *nptr)
 		num *= 10;
 		num = num + nptr[i] - '0';
 		if (i >= 18)
-			return(num);
+			return (num);
 		i++;
 	}
 	return (num * sign);
 }
 
-int						ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	int					i;
 
@@ -42,7 +42,7 @@ int						ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-void					free_node(t_node *stack)
+void	free_node(t_node *stack)
 {
 	t_node				*tmp;
 	t_node				*next;

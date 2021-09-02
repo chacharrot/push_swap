@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void		big_sort_split(t_stack *stack, int min, int max)
+void	big_sort_split(t_stack *stack, int min, int max)
 {
 	t_node	*tmp;
 	int		i;
@@ -57,7 +57,7 @@ static void	big_sort_swap_first_check(t_stack *stack,
 	}
 }
 
-void		big_sort_swap_first(t_stack *stack, int min, int max)
+void	big_sort_swap_first(t_stack *stack, int min, int max)
 {
 	int		pivot_min;
 	int		pivot_max;
@@ -73,11 +73,9 @@ void		big_sort_swap_first(t_stack *stack, int min, int max)
 		if (stack->b_head->i < min)
 		{
 			while (0 < cnt--)
-				big_sort_swap_first_rev(stack,
-						&pivot_min, &pivot_max, &i);
+				big_sort_swap_first_rev(stack, &pivot_min, &pivot_max, &i);
 		}
-		else if (stack->b_head->i == pivot_min
-				|| stack->b_head->i == pivot_max)
+		else if (stack->b_head->i == pivot_min || stack->b_head->i == pivot_max)
 			big_sort_swap_first_check(stack, &pivot_min, &pivot_max, &i);
 		else if (0 <= cnt++)
 			rotater("rb", stack);

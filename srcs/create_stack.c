@@ -10,7 +10,8 @@ static t_node	*create_node(char *av, t_node *now_node)
 	num = ft_atol(av);
 	if (!(check_int_range(num)))
 		return (0);
-	if (!(tmp = malloc(sizeof(t_node))))
+	tmp = malloc(sizeof(t_node));
+	if (!tmp)
 		return (0);
 	if (tmp)
 	{
@@ -24,31 +25,32 @@ static t_node	*create_node(char *av, t_node *now_node)
 	return (tmp);
 }
 
-static void		print_error(t_stack *stack)
+static void	print_error(t_stack *stack)
 {
 	free_node(stack->a_head);
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
-t_stack			*create_stack(int ac, char **av)
+t_stack	*create_stack(int ac, char **av)
 {
 	t_stack		*stack;
 	t_node		*now_node;
 	int			i;
 
-	if (!(stack = malloc(sizeof(t_stack))))
+	stack = malloc(sizeof(t_stack));
+	if (!stack)
 		return (0);
 	i = 1;
 	now_node = NULL;
 	while (i < ac)
 	{
-		if (!(now_node = create_node(av[i], now_node)))
+		now_node = create_node(av[i], now_node);
+		if (!now_node)
 			print_error(stack);
 		if (i == 1)
 			stack->a_head = now_node;
-		i++;
-		if (i == ac)
+		if (++i == ac)
 			stack->a_tail = now_node;
 	}
 	if (!(check_double(stack->a_head)))

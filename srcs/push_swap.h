@@ -4,22 +4,22 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_node
+typedef struct s_node
 {
 	int				nbr;
 	struct s_node	*next;
 	struct s_node	*prev;
 	int				i;
-}					t_node;
+}				t_node;
 
-typedef struct		s_stack
+typedef struct s_stack
 {
 	t_node			*a_head;
 	t_node			*a_tail;
 	t_node			*b_head;
 	t_node			*b_tail;
 	t_node			*pivot;
-}					t_stack;
+}				t_stack;
 
 t_stack				*create_stack(int ac, char **av);
 int					check_arg(char *av);

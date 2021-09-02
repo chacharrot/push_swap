@@ -20,7 +20,7 @@ static int	big_sort_swap_end_check1(t_stack *stack,
 {
 	if (stack->b_head->i == *min)
 	{
-		if (stac == stack->b_head->i + 1)
+		if (stack->a_tail->i == stack->b_head->i + 1)
 		{
 			rev_rotater("rra", stack);
 			push("pa", stack);
@@ -68,12 +68,14 @@ static void	big_sort_swap_end_all_check(t_stack *stack,
 	while (i < while_end)
 	{
 		if (stack->b_head->i < min)
+		{
 			while (0 < cnt--)
 			{
 				rev_rotater("rrb", stack);
 				if (stack->b_head->i == min || stack->b_head->i == max)
 					i += big_sort_swap_end_check1(stack, &min, &max, min_check);
 			}
+		}
 		else if (stack->b_head->i == min || stack->b_head->i == max)
 			i += big_sort_swap_end_check1(stack, &min, &max, min_check);
 		else if (stack->b_head->i == min + 1 || stack->b_head->i == max - 1)
@@ -83,7 +85,7 @@ static void	big_sort_swap_end_all_check(t_stack *stack,
 	}
 }
 
-void		big_sort_swap_end(t_stack *stack, int min, int max)
+void	big_sort_swap_end(t_stack *stack, int min, int max)
 {
 	int		min_check;
 

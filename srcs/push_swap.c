@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include <stdio.h>
 
 static int	is_sort(t_node *stack)
 {
@@ -15,13 +16,14 @@ static int	is_sort(t_node *stack)
 	return (1);
 }
 
-int			main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack	*stack;
 
 	if (ac < 2 || av[1] == 0)
 		return (0);
-	if (!(stack = create_stack(ac, av)))
+	stack = create_stack(ac, av);
+	if (!stack)
 		return (0);
 	add_index(stack, ac - 1);
 	if (is_sort(stack->a_head))

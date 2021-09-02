@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int		check_arg(char *av)
+int	check_arg(char *av)
 {
 	int	i;
 
@@ -16,16 +16,16 @@ int		check_arg(char *av)
 	return (1);
 }
 
-int		check_int_range(long long n)
+int	check_int_range(long long n)
 {
 	if (-2147483648 <= n && n <= 2147483647)
 		return (1);
 	return (0);
 }
 
-int		check_double(t_node *node)
+int	check_double(t_node *node)
 {
-	t_node *diff;
+	t_node	*diff;
 
 	while (node != NULL)
 	{
